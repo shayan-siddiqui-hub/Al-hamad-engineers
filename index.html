@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Al-Hamd Engeeniers</title>
+<style>
+:root{
+    --navy:#071a2f;
+    --navy2:#0c2946;
+    --blue:#1677c8;
+    --gold:#f5c451;
+    --white:#ffffff;
+    --muted:#b9c8d8;
+    --light:#f4f7fb;
+    --ink:#14283d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--ink);line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* NAVIGATION */
+header{position:sticky;top:0;z-index:10;background:rgba(5,20,37,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1)}
+.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;color:white}
+.brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--gold),#ffe7a1);color:var(--navy);font-weight:900;font-size:18px;box-shadow:0 8px 25px #f5c45130}
+.brand-name{font-weight:800;font-size:18px;line-height:1.1;letter-spacing:.2px}
+.brand-name span{display:block;color:var(--gold);font-size:12px;letter-spacing:2.5px;margin-top:5px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;color:#e4edf7;font-size:14px}
+.nav-links a{transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-cta{padding:11px 18px;border-radius:8px;background:var(--gold);color:var(--navy)!important;font-weight:800}
+.menu-toggle{display:none;background:none;color:white;border:0;font-size:27px;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;color:white;background:linear-gradient(110deg,rgba(4,20,37,.97) 0%,rgba(6,34,59,.91) 55%,rgba(6,34,59,.50) 100%),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #f5c45138;border-radius:50%;right:-130px;bottom:-240px;box-shadow:0 0 0 45px #f5c4510c,0 0 0 90px #f5c45108}
+.hero-inner{position:relative;z-index:1;padding:100px 0 110px;max-width:790px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.eyebrow:before{content:"";width:32px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(40px,6vw,70px);line-height:1.08;letter-spacing:-1.7px;margin:20px 0}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:17px;color:#d2dfeb;max-width:630px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 21px;border-radius:8px;font-weight:800;font-size:14px;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px #0002}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{border:1px solid #ffffff65;color:white;background:#ffffff08}
+.hero-note{margin-top:38px;display:flex;align-items:center;gap:12px;color:#c5d5e4;font-size:13px}
+.hero-note b{color:white}
+.pulse{width:9px;height:9px;border-radius:50%;background:#6fe0a1;box-shadow:0 0 0 5px #6fe0a125}
+
+/* INTRO */
+.intro{padding:92px 0;background:white}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.photo-wrap{position:relative;padding:0 24px 24px 0}
+.photo-wrap img{display:block;width:100%;height:450px;object-fit:cover;border-radius:18px;box-shadow:0 22px 50px #0b29421b}
+.photo-wrap:after{content:"";position:absolute;right:0;bottom:0;width:65%;height:65%;border:4px solid var(--gold);border-radius:18px;z-index:0}
+.photo-wrap img{position:relative;z-index:1}
+.floating-tag{position:absolute;z-index:2;left:-15px;bottom:48px;background:var(--navy);color:white;padding:17px 20px;border-radius:12px;box-shadow:0 15px 35px #071a2f35}
+.floating-tag strong{display:block;color:var(--gold);font-size:23px;line-height:1.2}
+.floating-tag span{font-size:12px;color:#d4e1ee}
+.section-label{color:#b18318;font-size:12px;font-weight:900;letter-spacing:2.8px;text-transform:uppercase}
+.intro h2,.section-title{font-size:clamp(30px,4vw,43px);line-height:1.17;letter-spacing:-.8px;margin:12px 0 20px;color:var(--navy)}
+.intro h2 span{color:var(--blue)}
+.intro p{color:#5f6e7e;margin-bottom:15px}
+.check-list{list-style:none;display:grid;gap:12px;margin:24px 0 29px}
+.check-list li{display:flex;align-items:center;gap:12px;font-weight:700;color:#20364c}
+.check{display:grid;place-items:center;flex:0 0 25px;height:25px;border-radius:50%;background:#e5f4eb;color:#17834d;font-size:13px}
+
+/* MISSION VISION */
+.mission{padding:85px 0;background:linear-gradient(135deg,#071a2f,#0d3559);color:white}
+.center-head{text-align:center;max-width:720px;margin:0 auto 43px}
+.center-head .section-label{color:var(--gold)}
+.center-head h2{color:white;font-size:clamp(30px,4vw,42px);line-height:1.2;margin:12px 0}
+.center-head p{color:#bfd0df}
+.mv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.mv-card{padding:32px;border:1px solid #ffffff20;border-radius:16px;background:linear-gradient(145deg,#ffffff12,#ffffff05);transition:.3s}
+.mv-card:hover{transform:translateY(-6px);border-color:#f5c45188;background:#ffffff12}
+.mv-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#f5c451;color:var(--navy);font-size:25px;margin-bottom:20px}
+.mv-card h3{font-size:23px;margin-bottom:10px}
+.mv-card p{color:#c4d3e0}
+
+/* VALUES */
+.values{padding:90px 0}
+.values .center-head h2{color:var(--navy)}
+.values .center-head p{color:#657487}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.value-card{padding:28px 23px;background:white;border:1px solid #e4eaf1;border-radius:14px;box-shadow:0 8px 25px #122b4207;transition:.3s}
+.value-card:hover{transform:translateY(-7px);border-color:#f0ce72;box-shadow:0 18px 38px #122b4212}
+.value-icon{font-size:28px;margin-bottom:17px}
+.value-card h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+.value-card p{font-size:14px;color:#667789}
+
+/* STATS */
+.stats{padding:45px 0;background:#edf3f8;border-top:1px solid #e0e8f0;border-bottom:1px solid #e0e8f0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat strong{display:block;font-size:34px;line-height:1.2;color:var(--blue)}
+.stat span{display:block;margin-top:8px;color:#5c6c7d;font-size:13px;font-weight:700}
+
+/* CTA + FOOTER */
+.cta{padding:70px 0;background:var(--gold)}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta h2{font-size:clamp(27px,4vw,39px);line-height:1.2;color:var(--navy);margin-bottom:8px}
+.cta p{color:#38485a}
+.cta .btn{background:var(--navy);color:white;white-space:nowrap}
+footer{background:#041321;color:#c2d0dd;padding:52px 0 22px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start;padding-bottom:35px}
+.footer-about{max-width:420px}
+.footer-about p{font-size:14px;color:#98aabd;margin-top:14px}
+.footer-links h3{color:white;font-size:15px;margin-bottom:13px}
+.footer-links a{display:block;font-size:14px;margin:7px 0;color:#b9c8d8}
+.footer-links a:hover{color:var(--gold)}
+.copyright{border-top:1px solid #ffffff1a;padding-top:18px;display:flex;justify-content:space-between;gap:15px;font-size:12px;color:#8ea1b5}
+
+/* RESPONSIVE */
+@media(max-width:850px){
+ .nav-links{gap:17px}
+ .intro-grid{gap:40px}
+ .value-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+ .navbar{min-height:70px;flex-wrap:wrap}
+ .menu-toggle{display:block}
+ .nav-links{display:none;width:100%;padding:0 0 18px;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links li a{display:block;padding:11px 5px}
+ .nav-cta{display:inline-block!important;text-align:center;margin-top:6px}
+ .hero-inner{padding:75px 0 82px}
+ .hero p{font-size:15px}
+ .intro{padding:65px 0}
+ .intro-grid{grid-template-columns:1fr;gap:42px}
+ .photo-wrap img{height:340px}
+ .floating-tag{left:0;bottom:40px}
+ .mission,.values{padding:65px 0}
+ .mv-grid{grid-template-columns:1fr}
+ .value-grid{grid-template-columns:1fr 1fr;gap:12px}
+ .value-card{padding:21px 16px}
+ .stats-grid{grid-template-columns:1fr 1fr;row-gap:28px}
+ .cta-inner,.footer-top{flex-direction:column;align-items:flex-start}
+ .copyright{flex-direction:column}
+}
+@media(max-width:390px){.value-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-.8px}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container navbar" aria-label="Main navigation">
+    <a class="brand" href="" aria-label="Al-Hamd Engeeniers home">
+      <div class="brand-mark">AH</div>
+      <div class="brand-name">Al-Hamd<span>Engeeniers</span></div>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks">
+     
+      <li><a class="nav-cta" href="login.php">Login / Sign Up</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="eyebrow">Who We Are</div>
+      <h1>Built on Precision.<br><span>Driven by Trust.</span></h1>
+      <p>At Al-Hamd Engeeniers, we help surveying and construction professionals work with confidence through reliable equipment, practical solutions, and a commitment to quality.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="login.php">Login to purchase <span>→</span></a>
+      
+      </div>
+      <div class="hero-note"><span class="pulse"></span><span><b>Precision · Quality · Trust</b> — our promise in every project.</span></div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container intro-grid">
+      <div class="photo-wrap">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=85" alt="Modern engineering and construction project" loading="lazy">
+        <div class="floating-tag"><strong>Built for accuracy</strong><span>Solutions for professionals</span></div>
+      </div>
+      <div>
+        <div class="section-label">About Al-Hamd Engeeniers</div>
+        <h2>Your work deserves <span>the right tools.</span></h2>
+        <p>We are focused on providing surveying instruments and equipment for engineers, contractors, and businesses. We understand that dependable tools and accurate measurements play an important role in successful projects.</p>
+        <p>Our aim is to make surveying simpler, faster, and more accessible by helping customers find equipment that suits their work and project requirements.</p>
+        <ul class="check-list">
+          <li><span class="check">✓</span> A focus on accuracy and dependable equipment</li>
+          <li><span class="check">✓</span> Helpful, customer-focused service</li>
+          <li><span class="check">✓</span> Practical solutions for surveying needs</li>
+        </ul>
+        <a class="btn btn-gold" style="background:#f5c451;color:#071a2f" href="#">Get in Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="container">
+      <div class="center-head">
+        <div class="section-label">Our Direction</div>
+        <h2>What Guides Our Work</h2>
+        <p>Every project is different. Our goal is to help professionals approach each one with dependable equipment and confidence.</p>
+      </div>
+      <div class="mv-grid">
+        <article class="mv-card">
+          <div class="mv-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To make quality surveying equipment and practical engineering solutions easier to access, while supporting customers with reliable service and a commitment to accuracy.</p>
+        </article>
+        <article class="mv-card">
+          <div class="mv-icon">🔭</div>
+          <h3>Our Vision</h3>
+          <p>To build lasting relationships with surveying and construction professionals by being a trusted source for equipment, guidance, and customer care.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <div class="center-head">
+        <div class="section-label">Our Core Values</div>
+        <h2>The Standards We Stand By</h2>
+        <p>Strong projects start with strong principles. These values shape how we work and serve our customers.</p>
+      </div>
+      <div class="value-grid">
+        <article class="value-card"><div class="value-icon">📐</div><h3>Precision</h3><p>We recognize the importance of accurate measurements and dependable tools.</p></article>
+        <article class="value-card"><div class="value-icon">🛡️</div><h3>Quality</h3><p>We focus on equipment and solutions selected to meet professional needs.</p></article>
+        <article class="value-card"><div class="value-icon">🤝</div><h3>Trust</h3><p>We value clear communication, honest service, and long-term relationships.</p></article>
+        <article class="value-card"><div class="value-icon">💡</div><h3>Progress</h3><p>We welcome better tools and smarter ways to support modern projects.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Our priorities">
+    <div class="container stats-grid">
+      <div class="stat"><strong>01</strong><span>Accuracy First</span></div>
+      <div class="stat"><strong>02</strong><span>Customer Focus</span></div>
+      <div class="stat"><strong>03</strong><span>Quality Equipment</span></div>
+      <div class="stat"><strong>04</strong><span>Lasting Trust</span></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-inner">
+      <div><h2>Let's build something precise.</h2><p>Looking for surveying equipment or need help choosing the right solution?</p></div>
+      <a class="btn" href="index2.html">Contact Al-Hamd Engeeniers <span>→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-about">
+        <a class="brand" href="index2.html"><div class="brand-mark">AH</div><div class="brand-name">Al-Hamd<span>Engeeniers</span></div></a>
+        <p>Surveying today for a better tomorrow. Supporting professionals with surveying equipment and practical solutions.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+          <a href="https://www.instagram.com/atiffarooq.farooq/">instagram</a>
+       
+      </div>
+      <div class="footer-links">
+        <h3>Get in Touch</h3>
+        <a href="#">Harbanspura</a>
+        <a href="tel:+923218401367">+92 321 8401367</a>
+        <a href="mailto:info@alhamdengeeniers.com">info@alhamdengeeniers.com</a>
+      </div>
+    </div>
+    <div class="copyright"><span>© 2026 Al-Hamd Engeeniers. All rights reserved.</span><span>Precision · Quality · Trust</span></div>
+  </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  menuToggle.textContent = isOpen ? '✕' : '☰';
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+  });
+});
+</script>
+</body>
+</html>
